@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"></constant>
+    <!-- 将对象工厂制定为spring来管理 -->
+    <constant name="struts.objectFactory" value="spring"></constant>
+    <!-- 指定struts的action的访问后缀 -->
+    <constant name="struts.action.extension" value="action"></constant>
+    <package name="default" namespace="/" extends="struts-default">
+    
+    
+    
+    
+    </package>
+</struts>
