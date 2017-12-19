@@ -25,7 +25,7 @@ import org.hibernate.SessionFactory;
  */
 @SuppressWarnings("unchecked")
 public class BaseDaoImpl<T> implements BaseDao<T> {
-	@Resource
+	@Resource(name="sessionFactory")
 	private SessionFactory sessionFactory;
 	private Class<T> obj;
 	
@@ -83,7 +83,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	 */
 	@Override
 	public List<T> findByIds(Long[] ids) {
-		String hqlString = "FROM " + obj.getSimpleName() +"WHERE id in (:ids)";
+		String hqlString = "FROM " + obj.getSimpleName() +" WHERE id in (:ids)";
 		Query query = this.getSession().createQuery(hqlString);
 		query.setParameterList("ids", ids);//传递数组形式（多个参数）
 		return query.list();
