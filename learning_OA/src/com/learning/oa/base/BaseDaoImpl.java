@@ -104,7 +104,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		return query.list();
 	}
 
-	public Session getSession() {
+	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 

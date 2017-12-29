@@ -13,7 +13,7 @@ import com.learning.oa.base.BaseDaoImpl;
 import com.learning.oa.dao.BookDao;
 import com.learning.oa.po.Book;
 
-/**
+/** 
  * ClassName: BookDaoImpl 
  * @Description: TODO
  * @author zhaoqian
@@ -21,6 +21,6 @@ import com.learning.oa.po.Book;
  */
 @Repository("bookDaoImpl")
 public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao {
-	
+
 	
 }

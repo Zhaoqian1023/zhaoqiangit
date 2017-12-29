@@ -12,7 +12,11 @@
     <!-- 配置自动更新堆栈中对象 -->
     <constant name="refreshModelBeforeResult" value="true"></constant>
     <package name="default" namespace="/" extends="struts-default">
-    
+    	<!-- 岗位管理action -->
+    	<action name="role_*" class="roleAction" method="{1}">
+    		<result name="RoleList">/WEB-INF/page/role/list.jsp</result>
+    	
+    	</action>
     
     
     

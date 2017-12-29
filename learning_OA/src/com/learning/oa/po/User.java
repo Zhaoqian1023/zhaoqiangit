@@ -1,5 +1,6 @@
 package com.learning.oa.po;
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -14,7 +15,7 @@ public class User {
 	private String password;
 	private String remark;
 	private Department department;
-	private Set<Role> roles;
+	private Set<Role> roles = new HashSet<Role>();
 	
 	
 	public User() {

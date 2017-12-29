@@ -10,6 +10,11 @@ package com.learning.oa.base;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import com.learning.oa.service.BookService;
+import com.learning.oa.service.RoleService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -24,8 +29,14 @@ import com.opensymphony.xwork2.util.ValueStack;
  */
 @SuppressWarnings("serial")
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
-
+	
 	protected T model;
+	@Autowired
+	@Qualifier("bookServiceImpl")
+	public BookService bookService;
+	@Autowired
+	@Qualifier("roleServiceImpl")
+	public RoleService roleService;
 
 	@SuppressWarnings("unchecked")
 	public BaseAction() {
@@ -58,7 +69,7 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	/**
 	 * 获得值栈
 	 */
-	public ValueStack getValueStack(){
+	protected ValueStack getValueStack(){
 		return ActionContext.getContext().getValueStack();
 	}
 

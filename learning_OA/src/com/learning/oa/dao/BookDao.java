@@ -17,5 +17,6 @@ import com.learning.oa.po.Book;
  * @date 2017年12月18日
  */
 public interface BookDao extends BaseDao<Book> {
+	
 
 }
