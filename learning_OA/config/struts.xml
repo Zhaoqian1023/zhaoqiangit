@@ -9,6 +9,8 @@
     <constant name="struts.objectFactory" value="spring"></constant>
     <!-- 指定struts的action的访问后缀 -->
     <constant name="struts.action.extension" value="action"></constant>
+    <!-- 配置自动更新堆栈中对象 -->
+    <constant name="refreshModelBeforeResult" value="true"></constant>
     <package name="default" namespace="/" extends="struts-default">
     
     

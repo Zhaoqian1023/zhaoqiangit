@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.learning.oa.po.User" table="learning_user">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="loginName" length="50"/>
+		<property name="name" length="32"/>
+		<property name="gender" length="2"/>
+		<property name="phone" length="15"/>
+		<property name="email" length="50"/>
+		<property name="remark" length="128"/>
+		<property name="password" length="128"/>
+		<many-to-one name="department" column="departmentId" class="com.learning.oa.po.Department"/>
+		<set name="roles" table="learning_user_role">
+			<key column="userId"/>
+			<many-to-many column="roleId" class="com.learning.oa.po.Role" />
+		</set>
+	</class>
+
+
+</hibernate-mapping>
