@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.learning.oa.service.BookService;
+import com.learning.oa.service.DepartmentService;
 import com.learning.oa.service.RoleService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -37,6 +38,11 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	@Autowired
 	@Qualifier("roleServiceImpl")
 	public RoleService roleService;
+	@Autowired
+	@Qualifier("departmentServiceImpl")
+	public DepartmentService departmentService;
+	
+	
 
 	@SuppressWarnings("unchecked")
 	public BaseAction() {

@@ -42,4 +42,39 @@ public class RoleServiceImpl implements RoleService {
 		return roleDao.findAll();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.learning.oa.service.RoleService#delRole(com.learning.oa.po.Role)
+	 */
+	@Override
+	public void delRole(Role role) {
+		roleDao.delObject(role.getId());
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see com.learning.oa.service.RoleService#getById(java.lang.Long)
+	 */
+	@Override
+	public Role getById(Long id) {
+		return roleDao.findObjectById(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.learning.oa.service.RoleService#update(com.learning.oa.po.Role)
+	 */
+	@Override
+	public void update(Role role) {
+		roleDao.updateObject(role);
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see com.learning.oa.service.RoleService#add(com.learning.oa.po.Role)
+	 */
+	@Override
+	public void add(Role role) {
+		roleDao.addObject(role);
+		
+	}
+
 }

@@ -11,10 +11,23 @@
     <constant name="struts.action.extension" value="action"></constant>
     <!-- 配置自动更新堆栈中对象 -->
     <constant name="refreshModelBeforeResult" value="true"></constant>
+    <!-- 指定统一的表单主题 -->
+    <constant name="struts.ui.theme" value="simple"/>
+    
     <package name="default" namespace="/" extends="struts-default">
     	<!-- 岗位管理action -->
     	<action name="role_*" class="roleAction" method="{1}">
-    		<result name="RoleList">/WEB-INF/page/role/list.jsp</result>
+    		<result name="roleList">/WEB-INF/page/role/list.jsp</result>
+    		<result name="toList" type="redirectAction">
+				<param name="actionName">role_list</param>
+				<param name="namespace">/</param>    		 	
+    		</result>
+    		<result name="editUI">/WEB-INF/page/role/save.jsp</result>
+    		<result name="addUI" >/WEB-INF/page/role/save.jsp</result>
+    	</action>
+    	<action name="department_*" class="departmentAction" method="{1}">
+    		<result name="toList">/WEB-INF/page/department/list.jsp</result>
+    	
     	
     	</action>
     

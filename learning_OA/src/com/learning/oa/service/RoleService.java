@@ -28,4 +28,41 @@ public interface RoleService {
 	 */
 	public List<Role> findAll();
 
+	/**
+	 * @Description: 删除指定的对象
+	 * @author zhaoqian
+	 * @date 2017年12月29日
+	 */
+	public void delRole(Role role);
+	/**
+	 * 
+	 * @Description: 通过id获取实体对象
+	 * @param @param id
+	 * @param @return   
+	 * @return Role  
+	 * @author zhaoqian
+	 * @date 2018年1月2日
+	 */
+	public Role getById(Long id);
+	/**
+	 * 
+	 * @Description: 修改岗位信息
+	 * @param @param role   
+	 * @return void  
+	 * @throws
+	 * @author zhaoqian
+	 * @date 2018年1月2日
+	 */
+	public void update(Role role);
+
+	/**
+	 * @Description: 添加岗位
+	 * @param @param role   
+	 * @return void  
+	 * @throws
+	 * @author zhaoqian
+	 * @date 2018年1月3日
+	 */
+	public void add(Role role);
+
 }
