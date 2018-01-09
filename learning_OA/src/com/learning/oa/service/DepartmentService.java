@@ -29,4 +29,60 @@ public interface DepartmentService {
 	 */
 	public List<Department> findAll();
 
+	/**
+	 * @Description: 删除部门对象
+	 * @param @param model   
+	 * @return void  
+	 * @throws
+	 * @author zhaoqian
+	 * @date 2018年1月4日
+	 */
+	public void delete(Department model);
+
+	/**
+	 * @Description: 添加部门
+	 * @param @param model   
+	 * @return void  
+	 * @throws
+	 * @author zhaoqian
+	 * @date 2018年1月4日
+	 */
+	public void add(Department model);
+
+	/**
+	 * @Description: 通过id获得部门对象
+	 * @param @param parentId
+	 * @return Department  
+	 * @author zhaoqian
+	 * @date 2018年1月8日
+	 */
+	public Department getById(Long parentId);
+
+	/**
+	 * @Description: 修改部门信息
+	 * @param @param model   
+	 * @return void  
+	 * @throws
+	 * @author zhaoqian
+	 * @date 2018年1月8日
+	 */
+	public void edit(Department model);
+
+	/**
+	 * @Description: 查询最高级部门
+	 * @return void  
+	 * @author zhaoqian
+	 * @date 2018年1月8日
+	 */
+	public List<Department> findAllParent();
+
+	/**
+	 * @Description: 查询子部门
+	 * @param @param parentId 上级部门id
+	 * @return List<Department>  
+	 * @author zhaoqian
+	 * @date 2018年1月8日
+	 */
+	public List<Department> findChildrensByParent(Long parentId);
+
 }

@@ -21,6 +21,7 @@ import com.opensymphony.xwork2.util.ValueStack;
  * @author zhaoqian
  * @date 2017年12月29日
  */
+@SuppressWarnings("serial")
 @Controller("roleAction")
 public class RoleAction extends BaseAction<Role> {
 	

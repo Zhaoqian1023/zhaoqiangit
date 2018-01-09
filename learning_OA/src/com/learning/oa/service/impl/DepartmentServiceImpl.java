@@ -25,7 +25,6 @@ import com.learning.oa.service.DepartmentService;
  * @date 2018年1月3日
  */
 @Service("departmentServiceImpl")
-@Transactional
 public class DepartmentServiceImpl implements DepartmentService {
 	@Autowired
 	@Qualifier("departmentDaoImpl")
@@ -33,6 +32,33 @@ public class DepartmentServiceImpl implements DepartmentService {
 	
 	public List<Department> findAll(){
 		return departmentDao.findAll();
+	}
+	@Transactional
+	public void delete(Department model) {
+		departmentDao.delObject(model.getId());
+		
+	}
+
+	public void add(Department model) {
+		departmentDao.addObject(model);
+	}
+
+	public Department getById(Long parentId) {
+		return departmentDao.findObjectById(parentId);
+	}
+	@Transactional
+	public void edit(Department model) {
+		departmentDao.updateObject(model);
+		
+	}
+
+	public List<Department> findAllParent() {
+		return departmentDao.findAllParent();
+		
+	}
+
+	public List<Department> findChildrensByParent(Long parentId) {
+		return departmentDao.findByParentid(parentId);
 	}
 	
 

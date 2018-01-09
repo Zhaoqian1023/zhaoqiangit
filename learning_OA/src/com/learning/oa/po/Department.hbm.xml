@@ -10,14 +10,14 @@
 		<property name="name" length="50"/>
 		<property name="description" length="128"/>
 		<many-to-one name="parent" column="parentId" class="com.learning.oa.po.Department"/>
-		<set name="childrens" >
+		<!-- 设置级联删除 -->
+		<set name="childrens" cascade="delete">
 			<key column="parentId" />
 			<one-to-many class="com.learning.oa.po.Department"/>
 		</set>
 		<set name="users">
 			<key column="departmentId"/>
 			<one-to-many class="com.learning.oa.po.User"/>
-		
 		</set>
 	</class>
 
